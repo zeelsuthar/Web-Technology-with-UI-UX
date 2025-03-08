@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Reward Registration</title>
+  <style>/* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: "Inknut Antiqua", serif;
+        background-color: #2fbf2d;
+        position: relative;
+      }
+      
+      /* Back Button */
+      .back-button-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        z-index: 10;
+      }
+      
+      .back-button {
+        width: 60px;
+        height: 58px;
+        position: absolute;
+        top: 62px;
+        left: 314px;
+        cursor: pointer;
+      }
+      
+      @media (max-width: 768px) {
+        .back-button {
+          left: 20px;
+          top: 20px;
+        }
+      }
+      
+      /* Main Container */
+      .container {
+        min-height: 100vh;
+        padding: 39px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #2fbf2d;
+      }
+      
+      @media (max-width: 640px) {
+        .container {
+          padding: 20px;
+        }
+      }
+      
+      /* Logo Section */
+      .logo-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        position: relative;
+        margin-top: 20px;
+      }
+      
+      .logo-img {
+        width: 147px;
+        height: 100px;
+        margin-bottom: 10px;
+        object-fit: contain;
+      }
+      
+      .logo-text {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        color: #115e20;
+        margin-bottom: 5px;
+        font-weight: normal;
+        text-align: center;
+      }
+      
+      .register-text {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        color: #1fd137;
+        font-weight: normal;
+        text-align: center;
+      }
+      
+      /* Form Container */
+      .form-container {
+        border-radius: 25px;
+        padding: 40px;
+        width: 100%;
+        max-width: 1354px;
+        position: relative;
+        background-color: #d9d9d9;
+      }
+      
+      @media (max-width: 640px) {
+        .form-container {
+          padding: 20px;
+        }
+      }
+      
+      /* Name Row */
+      .name-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      
+      @media (max-width: 991px) {
+        .name-row {
+          flex-direction: column;
+        }
+      }
+      
+      /* Input Groups */
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      
+      @media (max-width: 991px) {
+        .input-group {
+          max-width: 100%;
+        }
+      }
+      
+      .label {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 16px;
+        color: #000;
+        margin-bottom: 10px;
+      }
+      
+      .input-field {
+        border: 1px solid #000;
+        border-radius: 15px;
+        padding: 20px;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 24px;
+        height: 81px;
+        background-color: #d9d9d9;
+        width: 100%;
+      }
+      
+      /* Contact Row */
+      .contact-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      
+      @media (max-width: 991px) {
+        .contact-row {
+          flex-direction: column;
+        }
+      }
+      
+      .input-group-wide {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 547px;
+      }
+      
+      @media (max-width: 991px) {
+        .input-group-wide {
+          max-width: 100%;
+        }
+      }
+      
+      /* OTP Section */
+      .otp-section {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      
+      .otp-button {
+        border-radius: 25px;
+        border: 1px solid #000;
+        color: #060303;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 20px;
+        padding: 10px 40px;
+        cursor: pointer;
+        background-color: #e61417;
+        height: 81px;
+      }
+      
+      .input-group-otp {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        max-width: 229px;
+      }
+      
+      @media (max-width: 991px) {
+        .input-group-otp {
+          max-width: 100%;
+        }
+      }
+      
+      .otp-status {
+        position: absolute;
+        left: 342px;
+        top: 39px;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 20px;
+        color: #000;
+        white-space: nowrap;
+      }
+      
+      @media (max-width: 991px) {
+        .otp-status {
+          position: static;
+          margin-top: 10px;
+        }
+      }
+      
+      /* Address Section */
+      .address-section {
+        margin-bottom: 30px;
+      }
+      
+      .address-field {
+        width: 723px;
+        height: 115px;
+        border: 1px solid #000;
+        border-radius: 15px;
+        padding: 20px;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 16px;
+        resize: none;
+        background-color: #d9d9d9;
+      }
+      
+      @media (max-width: 991px) {
+        .address-field {
+          width: 100%;
+        }
+      }
+      
+      /* Profile Section */
+      .card {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        border: solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .lab {
+        border-radius: 25px;
+        border: 1px solid #000;
+        color: #060303;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 20px;
+        padding: 10px 40px;
+        cursor: pointer;
+        background-color: #e61417;
+        height: 81px;
+    }
+    
+    .in {
+        display: none;
+    }
+      /* Checkbox Row */
+      .checkbox-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      
+      .checkbox {
+        width: 21px;
+        height: 19px;
+        border: 1px solid #000;
+        background-color: #d9d9d9;
+      }
+      
+      .checkbox-label {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 11px;
+        color: #000;
+      }
+      
+      /* Register Button */
+      .register-button {
+        border-radius: 25px;
+        border: 1px solid #000;
+        color: #d21a1a;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        padding: 10px 40px;
+        width: 360px;
+        height: 74px;
+        margin: 0 auto;
+        display: block;
+        cursor: pointer;
+        background-color: #3ee614;
+      }
+      
+      @media (max-width: 640px) {
+        .register-button {
+          width: 100%;
+        }
+      }
+      </style>
+</head>
+<body>
+  <div class="back-button-container">
+    <a href="y&n.html"><svg
+      width="60"
+      height="58"
+      viewBox="0 0 60 58"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="back-button"
+    >
+      <path
+        d="M56 29C56 42.6804 44.4883 54 30 54C15.5117 54 4 42.6804 4 29C4 15.3196 15.5117 4 30 4C44.4883 4 56 15.3196 56 29Z"
+        fill="#D9D9D9"
+        stroke="black"
+        stroke-width="8"
+      ></path>
+      <path
+        d="M23.667 41.8402C23.2373 42.149 22.7393 42.0027 22.3975 41.4664L15.3662 30.414C15.1318 30.0483 15 29.5364 15 29C15 28.4636 15.1318 27.9517 15.3662 27.586L22.3975 16.5336C22.7393 15.9973 23.2373 15.851 23.667 16.1598C24.0967 16.4686 24.375 17.1756 24.375 17.9477V23.7989H38.4375C39.3018 23.7989 40 24.961 40 26.3995V31.6005C40 33.039 39.3018 34.2011 38.4375 34.2011H24.375V40.0523C24.375 40.8325 24.0967 41.5314 23.667 41.8402Z"
+        fill="black"
+      ></path>
+    </svg></a>
+  </div>
+
+  <main class="container">
+    <header class="logo-section">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c1a94bb2c06c70c9934c2ce3059720a1b66bc03"
+        alt="Eco-Reward Logo"
+        class="logo-img"
+      />
+      <h1 class="logo-text">Eco-Reward</h1>
+      <h2 class="register-text">Register</h2>
+    </header>
+
+    <form class="form-container">
+      <section class="name-row">
+        <div class="input-group">
+          <label for="firstName" class="label">First Name</label>
+          <input type="text" id="firstName" placeholder="First Name" class="input-field" required />
+        </div>
+        <div class="input-group">
+          <label for="lastName" class="label">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last Name" class="input-field" required/>
+        </div>
+        <div class="input-group">
+          <label for="surename" class="label">Surename</label>
+          <input type="text" id="surename" placeholder="Surename" class="input-field" required/>
+        </div>
+      </section>
+
+      <section class="contact-row">
+        <div class="input-group-wide">
+          <label for="phone" class="label">Phone number</label>
+          <input type="text" id="phone" placeholder="Please Enter phone number contery code" class="input-field" required/>
+        </div>
+
+        <div class="input-group-wide">
+          <label for="email" class="label">Email</label>
+          <input type="email" id="email" placeholder="Please Enter Email:-xyz123@gmail.com" class="input-field" required/>
+        </div>
+      </section>
+
+      <section class="otp-section">
+        <button type="button" class="otp-button">Otp</button>
+        <div class="input-group-otp">
+          <label for="otp" class="label">Otp</label>
+          <input type="text" id="otp"  placeholder="Otp" class="input-field" required/>
+          <span class="otp-status">Otp Status:-</span>
+        </div>
+      </section>
+
+      <section class="address-section">
+        <label for="address" class="label">Address:-</label><br>
+        <textarea id="address" placeholder="Adrees with pin code" class="address-field" required></textarea>
+      </section>
+      <div class="input-group-wide">
+        <label for="Password" class="label"> New Password</label>
+        <input type="password" id="Password" placeholder="Enter New password" class="input-field" maxlength="8" required/>
+      </div>
+    </section>
+    <section>
+        <label class="photo">Image</label>
+        <div class="card">
+            <img src="images/profile.png" id="profile-pic" alt="Profile Picture">
+        </div>
+        <input type="file" id="input-file" accept="image/jpeg, image/png, image/jpg" required class="in">
+        <label for="input-file" class="lab">Update Image</label>
+    </section><br>
+      <script>
+        let profilePic = document.getElementById("profile-pic");
+        let inputFile = document.getElementById("input-file");
+
+        inputFile.onchange = function() {
+          if (inputFile.files && inputFile.files[0]) {
+            profilePic.src = URL.createObjectURL(inputFile.files[0]);
+          }
+        }
+      </script>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="terms" class="checkbox" required/>
+        <label for="terms" class="checkbox-label">
+          This is information is all are correct
+        </label>
+      </div>
+    </form>
+
+      <a href="login.html"><button class="register-button"> Register</button></a>
+   
+  </main>
+</body>
+</html>
