@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Reward Leaderboard</title>
+    <style>     
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      .app {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+      }
+
+      .main-nav {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        background-color: #389444;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo {
+        width: 125px;
+        height: 123px;
+      }
+
+      .logo-text {
+        color: #0b5214;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+      }
+
+      .main-content {
+        display: flex;
+        flex: 1;
+        position: relative;
+        width: 484px;
+        height: 838px;
+      }
+
+      .sidebar {
+        width: 484px;
+        height: 838px;
+        border-radius: 0 25px 25px 0;
+        padding-top: 14px;
+        background-color: #d9d9d9;
+      }
+
+      .user-header {
+        display: flex;
+        align-items: center;
+        padding: 0 35px;
+        margin-bottom: 40px;
+      }
+
+      .back-button-container {
+        display: flex;
+      }
+
+      .back-button {
+        width: 60px;
+        height: 58px;
+      }
+
+      .user-title {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        font-weight: 700;
+        margin-left: 30px;
+      }
+
+      .nav-items {
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+      }
+
+      .nav-item {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #000;
+        width: 100%;
+        height: 74px;
+        border: 1px solid #000;
+        padding-left: 155px;
+        background-color: #d9d9d9;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-item.active {
+        color: #fff;
+      }
+
+      .leaderboard {
+        flex: 1;
+        padding: 0 20px;
+        margin-top: 114px;
+      }
+
+      .leaderboard-title {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        margin-bottom: 79px;
+      }
+
+      .leaderboard-items {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+
+      .leaderboard-item {
+        width: 908px;
+        height: 68px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        background-color: #d9d9d9;
+      }
+
+      .leaderboard-item.highlight {
+       clear: both;
+      }
+
+      .rank {
+        font-family: "Inria Sans", sans-serif;
+        font-size: 32px;
+        width: 38px;
+      }
+
+      .user-avatar {
+        width: 58px;
+        height: 53px;
+        margin: 0 51px;
+      }
+
+      .username {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+        flex: 1;
+      }
+
+      .points {
+        display: flex;
+        gap: 5px;
+      }
+
+      .points-number {
+        font-family: "Inria Sans", sans-serif;
+        font-size: 32px;
+      }
+
+      .points-text {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 32px;
+      }
+
+      .main-footer {
+        width: 100%;
+        height: 86px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+        margin-top: auto;
+        background-color: #389444;
+      }
+
+      .footer-text {
+        color: #fff;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 11px;
+      }
+
+      .privacy-policy {
+        color: #fff;
+        font-family: "Inknut Antiqua", serif;
+        font-size: 11px;
+      }
+
+      @media (max-width: 991px) {
+        .main-content {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+        }
+
+        .leaderboard-item,
+        .leaderboard-item.highlight {
+          width: 100%;
+        }
+
+        .leaderboard {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .main-nav {
+          height: 80px;
+        }
+
+        .logo {
+          width: 80px;
+          height: 78px;
+        }
+
+        .logo-text {
+          font-size: 24px;
+        }
+
+        .user-header {
+          padding: 0 20px;
+        }
+
+        .nav-item,
+        .nav-item.active {
+          font-size: 24px;
+          padding-left: 20px;
+        }
+
+        .leaderboard-title {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+
+        .leaderboard-item,
+        .leaderboard-item.highlight {
+          height: 60px;
+          padding: 0 10px;
+        }
+
+        .rank {
+          font-size: 20px;
+        }
+
+        .user-avatar {
+          width: 40px;
+          height: 35px;
+          margin: 0 20px;
+        }
+
+        .username {
+          font-size: 20px;
+        }
+
+        .points-number,
+        .points-text {
+          font-size: 20px;
+        }
+
+        .main-footer {
+          height: auto;
+          padding: 10px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="main-nav">
+        <div class="logo-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/903c20b03517f17f6e35981319135ff19bc99b0e"
+            alt="Logo"
+            class="logo"
+          />
+          <h1 class="logo-text">Eco-Reward</h1>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <nav class="sidebar">
+          <div class="user-header">
+            <div class="back-button-container">
+              <a href="reward.html"><svg
+                class="back-button"
+                width="60"
+                height="58"
+                viewBox="0 0 60 58"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M56 29C56 42.6804 44.4883 54 30 54C15.5117 54 4 42.6804 4 29C4 15.3196 15.5117 4 30 4C44.4883 4 56 15.3196 56 29Z"
+                  fill="#D9D9D9"
+                  stroke="black"
+                  stroke-width="8"
+                ></path>
+                <path
+                  d="M23.667 41.8402C23.2373 42.149 22.7393 42.0027 22.3975 41.4664L15.3662 30.414C15.1318 30.0483 15 29.5364 15 29C15 28.4636 15.1318 27.9517 15.3662 27.586L22.3975 16.5336C22.7393 15.9973 23.2373 15.851 23.667 16.1598C24.0967 16.4686 24.375 17.1756 24.375 17.9477V23.7989H38.4375C39.3018 23.7989 40 24.961 40 26.3995V31.6005C40 33.039 39.3018 34.2011 38.4375 34.2011H24.375V40.0523C24.375 40.8325 24.0967 41.5314 23.667 41.8402Z"
+                  fill="black"
+                ></path>
+              </svg></a>
+            </div>
+            <h2 class="user-title">User</h2>
+         </div>
+          <div class="nav-items">
+            <a href="#nav-item active"><div class="nav-item active">All User</div></a>
+            <a href="under.html"><div class="nav-item">Region User</div></a>
+            <a href="under.html"><div class="nav-item">My Friends</div></a>
+          </div>
+        </nav>
+
+
+
+        <section class="leaderboard">
+          <h2 class="leaderboard-title">Leadbord</h2>
+          <div class="leaderboard-items">
+            <article class="leaderboard-item">
+              <div class="rank">1.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/543fbc01dee84f351c19af4c6eddc788079588f4"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">sikethedie070</div>
+              <div class="points">
+                <span class="points-number">1,00,00,000</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item">
+              <div class="rank">2.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/31cb1188d2106e18adae37bc9b6c92bc4f36caea"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">p.click0909</div>
+              <div class="points">
+                <span class="points-number">95,56,856</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item highlight">
+              <div class="rank">3.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d151e9ca5914b69180147440ac8922baf34cef05"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">greenbilish77</div>
+              <div class="points">
+                <span class="points-number">85,00,786</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item highlight">
+              <div class="rank">4.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb8d6c2b715c7884cdbbd1413f5d3a606b1aaa66"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">mygreen01</div>
+              <div class="points">
+                <span class="points-number">85,00,200</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item">
+              <div class="rank">5.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f63f324a98f8e67c1242a22d2271a3b39ca29af"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">greenlily009</div>
+              <div class="points">
+                <span class="points-number">84,55,100</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item">
+              <div class="rank">6.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1b77c580e1c0a1a85d0aa557a4198d7cbc7c229a"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">greenbash787</div>
+              <div class="points">
+                <span class="points-number">81,00,000</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item">
+              <div class="rank">7.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c91ca0867e53871ef3d92598da928118e4277fb"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">natuaralwish00</div>
+              <div class="points">
+                <span class="points-number">50,00,000</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item highlight">
+              <div class="rank">8.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/2afbcf3d4857f27cbfb936d976b46ae98e7bffa2"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">netureuse54</div>
+              <div class="points">
+                <span class="points-number">49,99,999</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+
+            <article class="leaderboard-item highlight">
+              <div class="rank">9.</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/480e9089cb19006a0b49a8c98c48dc878d31dadb"
+                alt=""
+                class="user-avatar"
+              />
+              <div class="username">green10</div>
+              <div class="points">
+                <span class="points-number">49,95,788</span>
+                <span class="points-text">Points</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <div class="footer-text">
+          <span>©️ Eco Reward . All rights reserved.</span>
+          <br />
+          <span>Contanct us :- jeelsuthar1007@gmail.com</span>
+        </div>
+       <a href="under.html"><div class="privacy-policy">Privacy Policy</div></a> 
+      </footer>
+    </div>
+  </body>
+</html>
