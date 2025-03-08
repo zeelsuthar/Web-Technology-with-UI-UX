@@ -1,15 +1,3 @@
-Task:-
-1.Create a GIT repository named as your enrollment number. Create 2
-     folder in your repository named as Assignment_1 and Assignment_2.
-     Prepare a word file which contains each step of this task.
-     Upload your assignments in the respective folder. Share your git repository
-     link in a google form asked to you at the time of submission.
+[Figma Protype](https://www.figma.com/design/erjQFegA81l3gGW7F2qaui/eco-reward?m=auto&t=mpMXp4dhvsdDBH9U-6)
 
-2.Prepare a prototype design of a website in Figma which contains at
-      least 8-10 screen or maximum as required. Upload screen design in
-      assignment_1 folder.
-
-      Domain:-Green Living Rewards Program: Users earn rewards for adopting eco-friendly habits and practices.
-
-
-      
+[prototype live](https://www.figma.com/proto/erjQFegA81l3gGW7F2qaui/eco-reward?node-id=5-143&p=f&t=mpMXp4dhvsdDBH9U-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)
