@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Reward News</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Inder&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inknut Antiqua", serif;
+        width: 100%;
+        min-height: 100vh;
+        background-color: #fff;
+      }
+
+      .site-header {
+        height: 100px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        background-color: #389444;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand-logo {
+        width: 125px;
+        height: 123px;
+      }
+
+      .brand-name {
+        color: #0b5214;
+        font-size: 32px;
+      }
+
+      @media (max-width: 640px) {
+        .brand-name {
+          font-size: 24px;
+        }
+      }
+
+      .news-container {
+        padding: 20px;
+      }
+
+      .news-header {
+        position: relative;
+        margin-bottom: 40px;
+      }
+
+      .decorative-line {
+        height: 1px;
+        margin: 20px 0;
+        background-color: #000;
+      }
+
+      .section-title {
+        color: #e80303;
+        font-size: 48px;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+        margin-top: -60px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        background-color: #fff;
+      }
+
+      @media (max-width: 640px) {
+        .section-title {
+          font-size: 32px;
+        }
+      }
+
+      .content-wrapper {
+        display: flex;
+        gap: 20px;
+      }
+
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+        }
+      }
+
+      .navigation-sidebar {
+        width: 465px;
+        padding: 20px;
+        background-color: #d9d9d9;
+      }
+
+      @media (max-width: 991px) {
+        .navigation-sidebar {
+          width: 100%;
+        }
+      }
+
+      .close-button {
+        font-size: 24px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-link {
+        font-size: 24px;
+      }
+
+      .nav-link-active {
+        font-size: 24px;
+        color: #e30b0b;
+      }
+
+      .nav-indicator {
+        width: 146px;
+        height: 1px;
+        margin-top: 10px;
+        background-color: #000;
+      }
+
+      .article-container {
+        flex: 1;
+        padding: 20px;
+        background-color: #d9d9d9;
+      }
+
+      @media (max-width: 991px) {
+        .article-container {
+          width: 100%;
+        }
+      }
+
+      .category-header {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .article-heading {
+        color: #1706fb;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .article-body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      @media (max-width: 640px) {
+        .article-body {
+          flex-direction: column;
+        }
+      }
+
+      .article-image {
+        width: 457px;
+        height: 279px;
+        object-fit: cover;
+      }
+
+      @media (max-width: 640px) {
+        .article-image {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .article-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      @media (max-width: 640px) {
+        .article-content {
+          padding: 10px;
+        }
+      }
+
+      .paragraph {
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .info-box {
+        margin-top: 20px;
+      }
+
+      .info-box-title {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .info-box-text {
+        font-size: 10px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+
+      .read-more-link {
+        color: #f20c0c;
+        font-size: 14px;
+        text-align: right;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .site-footer {
+        padding: 20px;
+        background-color: #389444;
+      }
+
+      .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        font-size: 11px;
+      }
+
+      .copyright-info {
+        font-family: "Inder", sans-serif;
+      }
+
+      .privacy-link {
+        cursor: pointer;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/903c20b03517f17f6e35981319135ff19bc99b0e"
+          alt="Eco-Reward Logo"
+          class="brand-logo"
+        />
+        <h1 class="brand-name">Eco-Reward</h1>
+      </div>
+    </header>
+
+    <main class="news-container">
+      <section class="news-header">
+        <div class="decorative-line"></div>
+        <div class="decorative-line"></div>
+        <h2 class="section-title">News</h2>
+        <div class="decorative-line"></div>
+        <div class="decorative-line"></div>
+      </section>
+
+      <div class="content-wrapper">
+        <aside class="navigation-sidebar">
+          <a href="reward.html"><div class="close-button">⨉</div></a>
+          <nav class="nav-menu">
+            <a class="nav-link" href="under.html">Top</a>
+            <a class="nav-link-active" href="nav-link-active">Recents</a>
+            <a class="nav-link" href="under.html">Region</a>
+            <a class="nav-link" href="under.html">Articale</a>
+            <div class="nav-indicator"></div>
+          </nav>
+        </aside>
+
+        <section class="article-container">
+          <h3 class="category-header">Recent:-</h3>
+          <article>
+            <h4 class="article-heading">
+              Water trees to save yourself from heatwaves.
+            </h4>
+            <div class="article-body">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/fdd65cafa8c50ad2b38293b1ec56579b6ed85761"
+                alt="Trees in urban environment"
+                class="article-image"
+              />
+              <div class="article-content">
+                <p class="paragraph">
+                  Trees and green spaces can drive down urban temperatures. But
+                  they must be able to draw water from the soil to achieve
+                  cooling effects
+                </p>
+                <p class="paragraph">
+                  Hyderabad: Heatwaves are among the world's deadliest weather
+                  hazards. Every year, vast numbers of people are killed by heat
+                  stress and it can worsen health problems such as diabetes,
+                  asthma and heart disease.
+                </p>
+                <p class="paragraph">
+                  Unfortunately, the bitumen roads, brick and concrete
+                  structures and roofing tiles in cities absorb and retain vast
+                  amounts of heat, much of which is released after the sun has
+                  set. This creates what's known as the urban heat isla...
+                </p>
+                <div class="info-box">
+                  <h5 class="info-box-title">How do trees keep us cool?</h5>
+                  <p class="info-box-text">
+                    Trees reduce urban temperatures in two significant ways. One
+                    is by the shade they provides and the other is through their
+                    cooling effect – and these two are not the same thing. Water
+                    is taken up via a plant's roots, moves through the stems or
+                    trunks and is then misted into the air from the leaves
+                    through little holes called stomata. This is called
+                    transpiration, and it helps cool the air around leaves.
+                  </p>
+                  <p class="info-box-text">
+                    Water can also evaporate from soil and other surfaces. The
+                    combined loss of water from plants and soil is called
+                    evapotranspiration. The cooling effects of
+                    evapotranspiration vary but are up to 4°C, depending on
+                    other environmental factors.
+                  </p>
+                </div>
+                <a class="read-more-link" href="under.html">Read More »</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-wrapper">
+        <div class="copyright-info">
+          <span>©️ Eco Reward . All rights reserved.</span>
+          <br />
+          <span>Contanct us :- jeelsuthar1007@gmail.com</span>
+        </div>
+        <a class="privacy-link" href="under.html">Privacy Policy</a>
+      </div>
+    </footer>
+  </body>
+</html>
