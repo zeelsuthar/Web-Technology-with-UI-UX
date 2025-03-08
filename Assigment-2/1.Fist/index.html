@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Reward Login</title>
+    <style>/* Base Styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        
+        .app {
+          font-family: "Inknut Antiqua", serif;
+        }
+        
+        /* Login/Register Selection Screen */
+        .login-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          padding: 20px;
+          background-color: #2fbf2d;
+        }
+        
+        .card {
+          border-radius: 35px;
+          padding: 40px;
+          width: 100%;
+          max-width: 784px;
+          background-color: #d9d9d9;
+        }
+        
+        .logo-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 40px;
+        }
+        
+        .logo-image {
+          width: 147px;
+          height: 100px;
+          margin-bottom: 10px;
+        }
+        
+        .logo-text {
+          color: #115e20;
+          font-size: 32px;
+          margin-bottom: 10px;
+          font-weight: normal;
+        }
+        
+        .button-container {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        
+        .login-button {
+          width: 100%;
+          height: 84px;
+          border-radius: 25px;
+          font-size: 32px;
+          cursor: pointer;
+          color: white;
+          background-color: #15085e;
+          border: none;
+          font-family: "Inknut Antiqua", serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .divider {
+          display: flex;
+          align-items: center;
+          margin: 20px 0;
+        }
+        
+        .line {
+          flex: 1;
+          height: 1px;
+          background: black;
+        }
+        
+        .or-text {
+          padding: 0 20px;
+          color: black;
+          font-size: 13px;
+        }
+        
+        .register-button {
+          width: 100%;
+          height: 84px;
+          border-radius: 25px;
+          font-size: 32px;
+          cursor: pointer;
+          color: black;
+          background-color: #f0e2e2;
+          border: none;
+          font-family: "Inknut Antiqua", serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        /* Login Form Screen */
+        .login-form-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          padding: 20px;
+          background-color: #2fbf2d;
+        }
+        
+        .login-text {
+          color: #1fd137;
+          font-size: 32px;
+          font-weight: normal;
+        }
+        
+        .form-container {
+          width: 100%;
+        }
+        
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-bottom: 30px;
+        }
+        
+        .input-field {
+          position: relative;
+          width: 100%;
+        }
+        
+        .ti {
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 24px;
+        }
+        
+        .input {
+          width: 100%;
+          height: 91px;
+          border-radius: 25px;
+          border: 1px solid black;
+          background: white;
+          padding-left: 60px;
+          font-size: 16px;
+          font-family: "Inknut Antiqua", serif;
+        }
+        
+        .login-submit {
+          width: 240px;
+          height: 96px;
+          border-radius: 48px;
+          border: 1px solid black;
+          color: white;
+          font-size: 32px;
+          cursor: pointer;
+          margin: 0 auto;
+          background-color: #1fcd5c;
+          display: block;
+          font-family: "Inknut Antiqua", serif;
+        }
+        
+      
+        
+        /* Responsive Styles */
+        @media (max-width: 640px) {
+          .card {
+            padding: 15px;
+            border-radius: 15px;
+          }
+        
+          .logo-image {
+            width: 100px;
+            height: auto;
+          }
+        
+          .logo-text {
+            font-size: 20px;
+          }
+        
+          .login-button,
+          .register-button {
+            height: 50px;
+            font-size: 20px;
+          }
+        
+          .login-text {
+            font-size: 20px;
+          }
+        
+          .input {
+            height: 60px;
+            font-size: 14px;
+          }
+        
+          .login-submit {
+            width: 160px;
+            height: 60px;
+            font-size: 20px;
+          }
+        
+          .dialog-card {
+            padding: 15px;
+            border-radius: 15px;
+          }
+        
+          .dialog-text {
+            font-size: 20px;
+          }
+        
+          .yes-button,
+          .no-button {
+            width: 140px;
+            height: 50px;
+            font-size: 20px;
+          }
+        }
+        
+        </style>
+  </head>
+  <body>
+    <main class="app">
+      <!-- Login/Register Selection Screen -->
+      <section class="login-section">
+        <article class="card">
+          <header class="logo-container">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c1a94bb2c06c70c9934c2ce3059720a1b66bc03"
+              alt="Eco-Reward Logo"
+              class="logo-image"
+            />
+            <h1 class="logo-text">Eco-Reward</h1>
+          </header>
+          <div class="button-container">
+            <a href="login.html"><button class="login-button">Login</button></a>
+
+            <div class="divider">
+              <span class="line"></span>
+              <span class="or-text">or</span>
+              <span class="line"></span>
+            </div>
+            <a href="Regi.html"><button class="register-button">Register</button></a>
+          </div>
+        </article>
+      </section>   
+    </main>
+  </body>
+</html>
