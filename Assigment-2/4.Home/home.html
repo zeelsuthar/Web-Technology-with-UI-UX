@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Reward Program</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>/* Base styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Inknut Antiqua";
+        }
+        
+        body {
+          font-family: "Inknut Antiqua",
+        }
+        
+        /* Home container */
+        .home {
+          background-color: rgba(47, 191, 45, 1);
+          overflow: hidden;
+        }
+        
+        /* Header styles */
+        .header {
+          background-color: rgba(217, 217, 217, 1);
+          display: flex;
+          padding: 0 20px;
+          align-items: flex-start;
+          font-size: 32px;
+          color: rgba(11, 82, 20, 1);
+          font-weight: 400;
+          flex-wrap: wrap;
+        }
+        
+        .logo {
+          aspect-ratio: 1.06;
+          object-fit: contain;
+          object-position: center;
+          width: 125px;
+          flex-shrink: 0;
+          max-width: 100%;
+        }
+        
+        .brand-name {
+          margin-top: 12px;
+          flex-grow: 1;
+          flex-shrink: 1;
+          width: 1252px;
+          flex-basis: auto;
+          font-weight: 400;
+          font-size: 32px;
+        }
+        
+        @media (max-width: 991px) {
+          .brand-name {
+            max-width: 100%;
+          }
+        }
+        
+        /* Main content styles */
+        .main-content {
+          display: flex;
+          margin-top: 18px;
+          width: 100%;
+          padding: 0 41px;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        @media (max-width: 991px) {
+          .main-content {
+            max-width: 100%;
+            padding: 0 20px;
+          }
+        }
+        
+        .banner-image {
+          aspect-ratio: 4.65;
+          object-fit: contain;
+          object-position: center;
+          width: 100%;
+          border-radius: 35px;
+          align-self: stretch;
+        }
+        
+        @media (max-width: 991px) {
+          .banner-image {
+            max-width: 100%;
+          }
+        }
+        
+        .program-title {
+          color: rgba(3, 2, 2, 1);
+          font-size: 12px;
+          font-weight: 800;
+          margin-top: 38px;
+        }
+        
+        .program-description {
+          color: rgba(4, 4, 4, 1);
+          font-size: 12px;
+          font-weight: 800;
+          margin-top: 18px;
+          text-align: center;
+        }
+        
+        @media (max-width: 991px) {
+          .program-description {
+            max-width: 100%;
+          }
+        }
+        
+        /* Benefits section */
+        .benefits-section {
+          align-self: flex-end;
+          margin-top: 34px;
+          margin-right: 57px;
+          width: 100%;
+          max-width: 1120px;
+        }
+        
+        @media (max-width: 991px) {
+          .benefits-section {
+            max-width: 100%;
+            margin-right: 10px;
+          }
+        }
+        
+        .benefits-container {
+          gap: 20px;
+          display: flex;
+        }
+        
+        @media (max-width: 991px) {
+          .benefits-container {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+          }
+        }
+        
+        .image-column {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          line-height: normal;
+          width: 25%;
+          margin-left: 0;
+        }
+        
+        @media (max-width: 991px) {
+          .image-column {
+            width: 100%;
+          }
+        }
+        
+        .benefits-image {
+          aspect-ratio: 1.65;
+          object-fit: contain;
+          object-position: center;
+          width: 248px;
+          border-radius: 15px;
+          flex-shrink: 0;
+          max-width: 100%;
+          flex-grow: 1;
+          margin-left: 50px;
+        }
+        
+        @media (max-width: 991px) {
+          .benefits-image {
+            margin-top: 40px;
+          }
+        }
+        
+        .content-column {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          line-height: normal;
+          width: 75%;
+          margin-left: 20px;
+        }
+        
+        @media (max-width: 991px) {
+          .content-column {
+            width: 100%;
+          }
+        }
+        
+        .benefits-card {
+          border-radius: 25px;
+          background-color: rgba(210, 228, 210, 1);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          border: 1px solid rgba(0, 0, 0, 1);
+          display: flex;
+          flex-grow: 1;
+          padding: 0 28px 53px;
+          flex-direction: column;
+          align-items: stretch;
+          color: rgba(0, 0, 0, 1);
+          font-weight: 800;
+          width: 100%;
+          cursor: none;
+        }
+        .benefits-card :hover{
+          display: flex;
+          background-position: center;
+          background-size: 10px;
+          size: 10px;
+        }
+        
+        @media (max-width: 991px) {
+          .benefits-card {
+            max-width: 100%;
+            margin-top: 40px;
+            padding: 0 20px 53px;
+          }
+        }
+        
+        .benefits-title {
+          font-size: 24px;
+          text-align: right;
+          align-self: flex-start;
+        }
+        
+        .benefits-description {
+          font-size: 11px;
+          margin-left: 36px;
+        }
+        
+        @media (max-width: 991px) {
+          .benefits-description {
+            max-width: 100%;
+          }
+        }
+        
+        /* Rewards section */
+        .rewards-section {
+          margin-top: 28px;
+          margin-left: 32px;
+          width: 100%;
+          max-width: 1120px;
+        }
+        
+        @media (max-width: 991px) {
+          .rewards-section {
+            max-width: 100%;
+          }
+        }
+        
+        .rewards-container {
+          gap: 20px;
+          display: flex;
+        }
+        
+        @media (max-width: 991px) {
+          .rewards-container {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+          }
+        }
+        
+        .content-column-wide {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          line-height: normal;
+          width: 75%;
+          margin-left: 0;
+        }
+        
+        @media (max-width: 991px) {
+          .content-column-wide {
+            width: 100%;
+          }
+        }
+        
+        .rewards-card {
+          border-radius: 25px;
+          background-color: rgba(210, 228, 210, 1);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          border: 1px solid rgba(0, 0, 0, 1);
+          display: flex;
+          margin: 0 auto;
+          width: 759px;
+          flex-shrink: 0;
+          max-width: 100%;
+          height: 150px;
+        }
+        
+        @media (max-width: 991px) {
+          .rewards-card {
+            margin-top: 40px;
+          }
+        }
+        
+        .rewards-image {
+          aspect-ratio: 1.65;
+          object-fit: contain;
+          object-position: center;
+          width: 248px;
+          border-radius: 15px;
+          flex-shrink: 0;
+          max-width: 100%;
+          flex-grow: 1;
+        }
+        
+        @media (max-width: 991px) {
+          .rewards-image {
+            margin-top: 40px;
+          }
+        }
+        
+        /* Reward section */
+        .reward-heading {
+          color: rgba(74, 221, 10, 1);
+          font-size: 32px;
+          font-weight: 400;
+          z-index: 10;
+        }
+        
+        .reward-button {
+          border-radius: 25px;
+          background-color: rgba(70, 8, 186, 1);
+          width: 194px;
+          height: 60px;
+          border: none;
+          cursor: pointer;
+        }
+        .reward-button:hover{
+          color: black;
+          background-color: black;
+        }
+        
+        /* Footer styles */
+        .site-footer {
+          background-color: rgba(217, 217, 217, 1);
+          display: flex;
+          margin-top: 13px;
+          width: 100%;
+          padding: 16px 32px 0;
+          align-items: stretch;
+          gap: 20px;
+          font-size: 11px;
+          color: rgba(0, 0, 0, 1);
+          font-weight: 400;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        
+        @media (max-width: 991px) {
+          .site-footer {
+            max-width: 100%;
+            padding: 16px 20px 0;
+          }
+        }
+        
+        .footer-nav {
+          display: flex;
+          margin: auto 0;
+          align-items: stretch;
+          gap: 13px;
+        }
+        
+        .footer-link {
+          color: rgba(0, 0, 0, 1);
+          text-decoration: none;
+        }
+        .footer-link:hover{
+          color: blue;
+        }
+        
+        .footer-logo {
+          width: 173px;
+          height: 70px;
+          color: black;
+          padding-bottom: 100px;
+          display: flex;
+          margin: auto 0;
+          align-items: stretch;
+          gap: 13px;
+        }
+        .footer-logo :hover{
+          background-color: blue;
+          width: 20px;
+          color: blue;
+        }
+        </style>
+  </head>
+  <body>
+    <div class="home">
+      <header class="header">
+        <img
+          src="logo.png"
+          alt="Eco-Reward Logo"
+          class="logo"
+        /> 
+        <h1 class="logo-text">Eco-Reward</h1> 
+      </header>
+
+      <main class="main-content">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/b627f3ec1c634512a3ebe5b595e4d550/452de568d16e400ef5cc3f27ef90ca004ffc698d46dee558fd06a3264066929a?placeholderIfAbsent=true"
+          alt="Eco-Rewards Banner"
+          class="banner-image"
+        />
+
+        <h2 class="program-title">Join the EcoRewards Program</h2>
+
+        <p class="program-description">
+          Discover the benefits of living green and earn rewards for your
+          eco-friendly habits. Join our community dedicated to a sustainable
+          future.<br />
+        </p>
+
+        <section class="benefits-section" data-el="div-1">
+          <div class="benefits-container">
+            <div class="image-column">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/b627f3ec1c634512a3ebe5b595e4d550/4878a9663d55a6366bc3bb22c102ef4daf7c66f1e35f0b3f8d1eec03eb78e29b?placeholderIfAbsent=true"
+                alt="Personal Benefits"
+                class="benefits-image"
+              />
+            </div>
+            <div class="content-column">
+              <article class="benefits-card"><br>
+                <h3 class="benefits-title">Personal Benefits</h3><br>
+                <p class="benefits-description">
+                  Embrace a healthier lifestyle by adopting eco-friendly habits.
+                  Enjoy improved well-being and peace of mind knowing you're
+                  making a positive impact.<br />
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="rewards-section" data-el="div-2">
+          <div class="rewards-container">
+            <div class="content-column">
+                <article class="benefits-card"><br>
+                  <h3 class="benefits-title">Community Impact</h3><br>
+                  <p class="benefits-description">
+                    Join a network of like-minded individuals committed to fostering sustainable communities. 
+                    Participate in initiatives and share your success stories.<br />
+                  </p>
+                </article>
+              </div>
+            <div class="image-column">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/b627f3ec1c634512a3ebe5b595e4d550/5ed74c2e5554d208034e02cd83d37ff609c9f5ff4a886a7d52ba87d4e03a2f24?placeholderIfAbsent=true"
+                alt="Rewards"
+                class="rewards-image"
+              />
+            </div>
+            
+          </div>
+        </section><br>
+
+        
+        <a href="reward.html"><button class="reward-button"><h3 class="reward-heading">Reward</h3></button></a>
+      </main>
+
+      <footer class="site-footer">
+        <nav class="footer-nav">
+          <a href="Under.html" class="footer-link">About us</a>
+          <a href="Under.html" class="footer-link">Contact</a>
+          <a href="Under.html" class="footer-link">Privacy Poilcy</a>
+        </nav>
+        <div class="footer-logo">
+            <a href="Under.html"><i class="fa-brands fa-instagram fa-2xl" style="color: #000000;"></i></a>
+            <a href="Under.html"><i class="fa-brands fa-facebook fa-2xl" style="color: #0d0d0d;"></i></a>
+            <a href="Under.html"><i class="fa-brands fa-x-twitter fa-2xl" style="color: #000000;"></i></a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
