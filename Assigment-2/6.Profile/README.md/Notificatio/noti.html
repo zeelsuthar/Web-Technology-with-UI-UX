@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Reward</title>
+    <style>* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: "Inknut Antiqua", serif;
+    }
+  
+    .app {
+      font-family: "Inknut Antiqua", serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .nav {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      background-color: #389444;
+    }
+  
+    @media (max-width: 640px) {
+      .nav {
+        height: 80px;
+      }
+    }
+  
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .logo {
+      width: 125px;
+      height: 123px;
+    }
+  
+    @media (max-width: 640px) {
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  
+    .logo-text {
+      color: #0b5214;
+      font-size: 32px;
+    }
+  
+    @media (max-width: 640px) {
+      .logo-text {
+        font-size: 24px;
+      }
+    }
+  
+    .main-content {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex: 1;
+    }
+  
+    @media (max-width: 991px) {
+      .main-content {
+        flex-direction: column;
+      }
+    }
+  
+    .back-button {
+      margin-top: 20px;
+    }
+  
+    .back-icon {
+      cursor: pointer;
+    }
+  
+    .notification-section {
+      padding: 20px;
+      border-radius: 8px;
+      width: 408px;
+      background-color: #d9d9d9;
+      flex-direction: row;
+    }
+  
+    @media (max-width: 640px) {
+      .notification-section {
+        width: 100%;
+      }
+    }
+  
+    .notification-bell {
+      margin-bottom: 15px;
+      margin-left: 50px;
+    }
+  
+    .head{
+      margin-bottom: 15px;
+      margin-left: 25px;
+    }
+  
+    .section-today {
+      margin-bottom: 40px;
+    }
+  
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+  
+    .divider {
+      height: 1px;
+      margin: 10px 0;
+      background-color: #000;
+    }
+  
+    .notification-card {
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #d9d9d9;
+    }
+  
+    .user-notification {
+      margin-bottom: 10px;
+    }
+  
+    .score-text {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  
+    .section-this-week {
+      margin-bottom: 40px;
+    }
+  
+    .task-text {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+  
+    .section-this-month {
+      margin-bottom: 40px;
+    }
+  
+    .section-this-year {
+      margin-bottom: 40px;
+    }
+  
+    .feedback-section {
+      flex: 1;
+    }
+  
+    @media (max-width: 640px) {
+      .feedback-section {
+        width: 100%;
+      }
+    }
+  
+    .feedback-container {
+      padding: 40px;
+      border-radius: 25px;
+      background-color: #f3e7e7;
+    }
+  
+    @media (max-width: 991px) {
+      .feedback-container {
+        padding: 20px;
+      }
+    }
+  
+    .feedback-title {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  
+    .input-group {
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: #d9d9d9;
+    }
+  
+    @media (max-width: 640px) {
+      .input-group {
+        padding: 15px;
+      }
+    }
+  
+    .icon {
+      font-size: 64px;
+    }
+  
+    .input-field {
+      flex: 1;
+    }
+  
+    .input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      font-family: "Inknut Antiqua", serif;
+      outline: none;
+    }
+  
+    .message-field {
+      border-radius: 15px;
+      padding: 40px;
+      margin-bottom: 40px;
+      background-color: #d9d9d9;
+    }
+  
+    @media (max-width: 640px) {
+      .message-field {
+        padding: 15px;
+      }
+    }
+  
+    .input-2 {
+      width: 100%;
+      background: transparent;
+      border: none;
+      font-size: 36px;
+      font-family: "Inknut Antiqua", serif;
+      text-align: center;
+      outline: none;
+    }
+  
+    .submit-button {
+      color: white;
+      font-size: 36px;
+      padding: 20px;
+      border-radius: 50px;
+      text-align: center;
+      width: 386px;
+      margin: 0 auto;
+      cursor: pointer;
+      background-color: #312b88;
+    }
+  
+    @media (max-width: 991px) {
+      .submit-button {
+        width: 100%;
+      }
+    }
+  
+    @media (max-width: 640px) {
+      .submit-button {
+        font-size: 24px;
+        padding: 15px;
+      }
+    }
+  
+    .footer {
+      padding: 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #389444;
+    }
+  
+    .footer-text {
+      font-size: 11px;
+    }
+  
+    .privacy-link {
+      font-size: 11px;
+      cursor: pointer;
+    }
+  </style>
+
+  </head>
+  <body>
+    <div class="app">
+      <header class="nav">
+        <div class="logo-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/903c20b03517f17f6e35981319135ff19bc99b0e"
+            alt="logo"
+            class="logo"
+          />
+          <h1 class="logo-text">Eco-Reward</h1>
+        </div>
+      </header>
+
+      <main class="main-content">
+    
+
+        <section class="notification-section">
+         <a href="profail.html"><div class="back-button">
+            <svg
+              class="back-icon"
+              width="60"
+              height="58"
+              viewBox="0 0 60 58"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M56 29C56 42.6804 44.4883 54 30 54C15.5117 54 4 42.6804 4 29C4 15.3196 15.5117 4 30 4C44.4883 4 56 15.3196 56 29Z"
+                fill="#D9D9D9"
+                stroke="black"
+                stroke-width="8"
+              ></path>
+              <path
+                d="M23.667 41.8402C23.2373 42.149 22.7393 42.0027 22.3975 41.4664L15.3662 30.414C15.1318 30.0483 15 29.5364 15 29C15 28.4636 15.1318 27.9517 15.3662 27.586L22.3975 16.5336C22.7393 15.9973 23.2373 15.851 23.667 16.1598C24.0967 16.4686 24.375 17.1756 24.375 17.9477V23.7989H38.4375C39.3018 23.7989 40 24.961 40 26.3995V31.6005C40 33.039 39.3018 34.2011 38.4375 34.2011H24.375V40.0523C24.375 40.8325 24.0967 41.5314 23.667 41.8402Z"
+                fill="black"
+              ></path>
+            </svg>
+          </div></a><br>
+          <div class="head">
+            <h1>Notification</h1>
+          </div>
+          <header>
+            <svg
+              class="head"
+              width="264"
+              height="68"
+              viewBox="0 0 264 68"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M102.971 5.48657L103.356 5.39553V5V3.5C103.356 2.31824 104.159 1.5 104.999 1.5C105.838 1.5 106.641 2.31824 106.641 3.5V5V5.39553L107.026 5.48657C111.647 6.57947 115.213 11.3885 115.213 17.25V18.7188C115.213 22.5009 116.403 26.1477 118.562 28.99L118.563 28.9911L119.059 29.6395L119.059 29.64C119.511 30.2297 119.633 31.0995 119.345 31.8427C119.057 32.5851 118.456 33 117.855 33H92.1415C91.5385 33 90.9339 32.5831 90.6536 31.8458C90.3694 31.0982 90.4879 30.2277 90.9381 29.64L90.9384 29.6395L91.4339 28.9911L91.4348 28.99C93.5942 26.1476 94.7844 22.4929 94.7844 18.7188V17.25C94.7844 11.3885 98.3503 6.57947 102.971 5.48657ZM108.761 36.5C108.665 37.5319 108.272 38.4902 107.652 39.2137C106.935 40.0502 105.978 40.5 104.999 40.5C104.019 40.5 103.062 40.0502 102.345 39.2137C101.725 38.4902 101.332 37.5319 101.236 36.5H104.999H108.761Z"
+                fill="black"
+                stroke="black"
+              ></path>
+            </svg>
+</header><br>
+
+          <div class="notification-content">
+            <article class="section-today">
+              <h2 class="section-title">Today</h2>
+              <div class="divider"></div>
+              <div class="notification-card">
+                <svg
+                  class="user-notification"
+                  width="364"
+                  height="63"
+                  viewBox="0 0 364 63"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="31.5"
+                    cy="31.5"
+                    r="31"
+                    fill="#D9D9D9"
+                    stroke="black"
+                  ></circle>
+                  <text
+                    fill="black"
+                    xml:space="preserve"
+                    style="white-space: pre"
+                    font-family="Inknut Antiqua"
+                    font-size="48"
+                    letter-spacing="0em"
+                  >
+                    <tspan x="3" y="44.64">🙎</tspan>
+                  </text>
+                  <text
+                    fill="black"
+                    xml:space="preserve"
+                    style="white-space: pre"
+                    font-family="Inknut Antiqua"
+                    font-size="15"
+                    letter-spacing="0em"
+                  >
+                    <tspan x="72" y="38.7025">
+                      xyz123 Started following you
+                    </tspan>
+                  </text>
+                </svg>
+                <p class="score-text">You Complate Your 1250 score</p>
+              </div>
+            </article>
+
+            <article class="section-this-week">
+              <h2 class="section-title">This Weak</h2>
+              <div class="divider"></div>
+              <p class="task-text">
+                <span>compalate your task and get free reward</span>
+                <br />
+                <span>make Your day special with eco-reward</span>
+              </p>
+            </article>
+
+            <article class="section-this-month">
+              <h2 class="section-title">This Month</h2>
+              <div class="divider"></div>
+              <p class="task-text">
+                <span>compalate your task and get free reward</span>
+                <br />
+                <span>make Your day special with eco-reward</span>
+              </p>
+            </article>
+
+            <article class="section-this-year">
+              <h2 class="section-title">This Year</h2>
+              <div class="divider"></div>
+              <p class="task-text">
+                <span>compalate your task and get free reward</span>
+                <br />
+                <span>make Your day special with eco-reward</span>
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="feedback-section">
+          <div class="feedback-container">
+            <h2 class="feedback-title">Feedback</h2>
+
+            <form>
+              <div class="input-group">
+                <div class="icon"></div>
+                <div class="input-field">
+                  <input
+                    type="text"
+                    placeholder="Enter Your Name"
+                    class="input"
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="icon"></div>
+                <div class="input-field">
+                  <input
+                    type="text"
+                    placeholder="Enter your email id"
+                    class="input"
+                  />
+                </div>
+              </div>
+
+              <div class="message-field">
+                <input
+                  type="text"
+                  placeholder="Enter your Message here"
+                  class="input-2"
+                />
+              </div>
+            </form>
+             <a href="under.html"><button  class="submit-button">Sumbit</button></a> 
+           
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-text">
+          <span>© Eco Reward . All rights reserved.</span>
+          <br />
+          <span>Contanct us :- jeelsuthar1007@gmail.com</span>
+        </div>
+        <a href="under.html" class="privacy-link">Privacy Policy</a>
+      </footer>
+    </div>
+  </body>
+</html>
