@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Reward Login</title>
+    <style>/* Base Styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        
+        .app {
+          font-family: "Inknut Antiqua", serif;
+        }
+        /* Confirmation Dialog */
+        .confirmation-dialog {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          padding: 20px;
+          background-color: #2fbf2d;
+        }
+        
+        .dialog-card {
+          border-radius: 25px;
+          padding: 40px;
+          width: 100%;
+          max-width: 1024px;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          background-color: #d9d9d9;
+        }
+        
+        .dialog-content {
+          text-align: center;
+        }
+        
+        .dialog-text {
+          color: #f11;
+          font-size: 36px;
+          margin-bottom: 40px;
+        }
+        
+        .dialog-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+        }
+        
+        .yes-button,
+        .no-button {
+          width: 292px;
+          height: 93px;
+          border-radius: 35px;
+          border: 1px solid #481a1a;
+          color: black;
+          font-size: 36px;
+          cursor: pointer;
+          background-color: #f00;
+          font-family: "Inknut Antiqua", serif;
+        }
+        /* Responsive Styles */
+        @media (max-width: 640px) {
+          .card {
+            padding: 15px;
+            border-radius: 15px;
+          }
+        
+          .logo-image {
+            width: 100px;
+            height: auto;
+          }
+        
+          .logo-text {
+            font-size: 20px;
+          }
+        
+          .login-button,
+          .register-button {
+            height: 50px;
+            font-size: 20px;
+          }
+        
+          .login-text {
+            font-size: 20px;
+          }
+        
+          .input {
+            height: 60px;
+            font-size: 14px;
+          }
+        
+          .login-submit {
+            width: 160px;
+            height: 60px;
+            font-size: 20px;
+          }
+        
+          .dialog-card {
+            padding: 15px;
+            border-radius: 15px;
+          }
+        
+          .dialog-text {
+            font-size: 20px;
+          }
+        
+          .yes-button,
+          .no-button {
+            width: 140px;
+            height: 50px;
+            font-size: 20px;
+          }
+        }</style>
+  </head>
+  <body>
+    <main class="app">
+    <!-- Confirmation Dialog -->
+    <section class="confirmation-dialog">
+      <article class="dialog-card">
+        <div class="dialog-content">
+          <p class="dialog-text">Are You Sure Want Leave Registration</p>
+          <div class="dialog-buttons">
+            <a href="index.html"><button class="yes-button">Yes</button></a>
+            <a href="Regi.html"><button class="no-button">No</button></a>
+          </div>
+        </div>
+      </article>
+    </section>
+</body>
