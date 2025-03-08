@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Reward</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaf4ea;
+}
+
+/* Navigation Styles */
+.nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #389444;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 125px;
+  height: 123px;
+}
+
+.logo-text {
+  color: #0b5214;
+  font-family: "Inknut Antiqua", serif;
+  font-size: 32px;
+  margin-left: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 16px;
+  color: #000;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #1ec946;
+}
+
+.nav-link.active {
+  color: black;
+  background-color: green;
+}
+
+/* Container and Sidebar */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  height: auto; /* Allow height to adjust */
+}
+
+.sidebar {
+  background-color: white;
+  width: 250px;
+  padding: 20px;
+  border-right: 2px solid #dddddd;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.followers {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.notification-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.friend-suggestions {
+  margin-top: 20px;
+}
+
+.friend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-suggestions h3 {
+  margin-bottom: 10px;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  background-color: #e9e9e9;
+  padding: 20px;
+  min-width: 300px; /* Ensure minimum width */
+}
+
+/* Progress Section */
+.progress-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.progress-item {
+  background-color: #a5d6a7;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  flex: 1; /* Allow items to grow */
+  margin: 10px; /* Add margin for spacing */
+}
+
+/* Reward Section */
+.reward-section {
+  margin-top: 20px;
+}
+
+.reward-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reward-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #389444;
+}
+
+.footer-text {
+  color: #fff;
+  font-family: "Inknut Antiqua", serif;
+  font-size: 11px;
+}
+
+.footer-link {
+  color: #fff;
+  font-family: "Inknut Antiqua", serif;
+  font-size: 11px;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .logo-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack sidebar and main content */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width on smaller screens */
+    border-right: none; /* Remove border */
+    border-bottom: 2px solid #dddddd; /* Add bottom border */
+  }
+
+  .main-content {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .progress-section {
+    flex-direction: column; /* Stack progress items */
+  }
+
+  .progress-item {
+    margin: 10px 0; /* Add vertical margin */
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .menu-toggle {
+    display: block; /* Show toggle button on smaller screens */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px; /* Reduce gap */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width */
+    border-right: none; /* Remove border */
+    border-bottom: 2px solid #dddddd; /* Add bottom border */
+  }
+
+  .main-content {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .progress-section {
+    flex-direction: column; /* Stack progress items */
+  }
+
+  .progress-item {
+    margin: 5px 0; /* Adjust margin */
+  }
+}
+
+/* Scalable Styles */
+.logo-text {
+  font-size: 2rem; /* Use rem for scalability */
+}
+
+.nav-link {
+  font-size: 1rem; /* Use rem for scalability */
+}
+
+.logo-img,
+.profile-info img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+    </style>
+</head>
+<body>
+    <div>
+      <header class="nav">
+        <div class="logo">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/903c20b03517f17f6e35981319135ff19bc99b0e" alt="Logo" class="logo-img">
+            <h1 class="logo-text">Eco-Reward</h1>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav class="nav-links">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="reward.html" class="nav-link">Reward Dashboard</a>
+            <a href="profile.html" class="nav-link active">Profile</a>
+        </nav>
+      </header>
+    </div>
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+    
+      menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          if (navLinks.classList.contains('active')) {
+              navLinks.style.display = 'flex'; // Show the menu
+          } else {
+              navLinks.style.display = 'none'; // Hide the menu
+          }
+      });
+    </script>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-info">
+                <img src="download.png" alt="Profile Picture"><br><br>
+                <h2>Jeel Suthar</h2>
+                <p>🇮🇳 India</p>
+            </div>
+            <div class="followers">
+                <div class="follower-count">
+                    <h3>220k</h3>
+                    <p>FOLLOWERS</p>
+                </div>
+                <div class="following-count">
+                    <h3>2</h3>
+                    <p>FOLLOWING</p>
+                </div>
+            </div>
+            <a href="noti.html"><button class="notification-btn">Notification</button></a>
+            <div class="friend-suggestions">
+                <h3>Friend Suggestions</h3>
+                <div class="friend">
+                    <span>John Die (johndie)</span>
+                    <button>+</button>
+                </div>
+                <div class="friend">
+                    <span>Rocky (its_rock9090)</span>
+                    <button>+</button>
+                </div>
+                <div class="friend">
+                    <span>Like (green lower)</span>
+                    <button>+</button>
+                </div>
+                <a href="Under.html"><button class="see-more">See more</button></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2>Eco-Reward Progress</h2>
+            <div class="progress-section">
+                <div class="progress-item">
+                    <h3>Completed Work</h3>
+                    <p>3</p>
+                </div>
+                <div class="progress-item">
+                    <h3>Achievements</h3>
+                    <p>9</p>
+                </div>
+                <div class="progress-item">
+                    <h3>Progress Bar</h3>
+                    <p>70%</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="reward-section">
+                <h3>Reward Section <span>(No Reward Available)</span></h3>
+                <div class="reward-icons">
+                    <div class="reward-icon">🚫</div>
+                    <div class="reward-icon">🚫</div>
+                    <div class="reward-icon">🚫</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <span>© Eco Reward. All rights reserved.</span>
+            <br>
+            <span>Contact us: jeelsuthar1007@gmail.com</span>
+        </div>
+        <a href="under.html" class="footer-link">Privacy Policy</a>
+    </footer>
+</body>
+</html>
